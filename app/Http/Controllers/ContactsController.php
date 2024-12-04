@@ -38,12 +38,25 @@ class ContactsController extends Controller
       return view('edit', ['contact'=>$contact]);
     }
     
-    public function update(){
+    public function update(Request $request , $id){
+
+      $contact = contact::find($id);
+      $contact->name = $request->name;
+      $contact->mobile = $request->mobile;
+
+      $contact->update();
+
+      return redirect()->route('contacts.index');
+
 
     }
 
-    public function delete(){
+    public function delete($id){
 
+       $contact = contact::find($id);
+       $contact->delete();
+
+       return redirect()->route('contacts.index');
 
     }
 }

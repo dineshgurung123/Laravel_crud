@@ -13,8 +13,6 @@ Route::get('/', [ContactsController::class, 'index'])->name('contacts.index');
 
 Route::get('/contact/edit/{id}', [ContactsController::class, 'edit'])->name('contacts.edit');
 
-// Route::get('/about', [HomeController::class, 'about']);
+Route::post('contact/update/{id}', [ContactsController::class, 'update'])->name('contacts.update');
 
-
-
-
+Route::get('contact/delete/{id}', [ContactsController::class, 'delete'])->name('contacts.delete');

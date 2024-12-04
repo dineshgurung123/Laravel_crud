@@ -29,7 +29,7 @@
      <td>{{ $contact->mobile}}</td>
       <td>
         <a href="{{ route('contacts.edit',$contact->id) }}">Edit</a>
-        <a href="">Delete</a>
+        <a href="{{route('contacts.delete', $contact->id)}}">Delete</a>
       </td>
      </tr> 
    

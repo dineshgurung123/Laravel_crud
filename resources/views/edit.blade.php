@@ -7,19 +7,19 @@
 </head>
 <body>
     
-<form action="{{route('contacts.store')}}" method="post">
+<form action="{{route('contacts.update', $contact->id)}}" method="post" >
 
  @csrf
 
   <div class="mb-3">
     <label >Name</label>
-    <input type="text" name="name" >
+    <input type="text" value="{{ $contact->name }}" name="name"  >
   </div>
 
 
   <div  >
     <label >Mobile number</label>
-    <input type="tel"  name="mobile">
+    <input type="tel" value="{{ $contact->mobile }}" name="mobile">
   </div>
   
   <button type="submit">Submit</button>
